@@ -1,12 +1,20 @@
 import "./App.css";
+// import Navbar from "./components/Navbar";
+// import Home from "./pages/Home.js";
+// import Footer from "./components/Footer.js";
+// import {Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
-    <main class="flex justify-center gap-4 flex-col min-h-screen">
-      <h1 class="text-3xl text-center font-bold underline">React & Tailwind CSS Starter Pack</h1>
-      <p class="text-center text-xl">This is a starter pack for React & Tailwind CSS projects.</p>
-      <img src="https://bit.ly/3wsmzTy" alt="meme" class="mx-auto" />
-    </main>
+    <div className="container h-screen w-screen bg-gradient-to-r from-emerald-100 via-emerald-50 to-emerald-100">
+
+      {/* <Navbar/>
+
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+      </Routes>
+      <Footer></Footer> */}
+    </div>
   );
 }
 
