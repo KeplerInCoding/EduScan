@@ -1,8 +1,11 @@
 import React from 'react'
+import LoginForm from '../components/Login'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className=''>
+        <LoginForm/>
+    </div>
   )
 }
 

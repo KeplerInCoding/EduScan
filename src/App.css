@@ -1,8 +1,7 @@
-/* write your css here */
 /* // <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 400 to 700 */
 
-.container {
+.main {
     font-family: "Kode Mono", monospace;
     font-optical-sizing: auto;
     font-weight: 500;
