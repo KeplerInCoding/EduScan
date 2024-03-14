@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="container h-screen w-screen bg-gradient-to-r from-emerald-100 via-emerald-50 to-emerald-100">
+    <div className="container h-screen w-screen bg-gradient-to-r from-purple-100 via-purple-50 to-purple-100">
 
       {/* <Navbar/>
 
