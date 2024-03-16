@@ -7,14 +7,28 @@ const Dashboard = () => {
     const [section, setSection] = useState('');
 
     const handleScanDocument = () => {
-        // Function to open camera and scan document
-        console.log('Opening camera to scan document...');
+        // Check if the browser supports mediaDevices and getUserMedia
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            // Access the camera
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    console.log('Camera access successful');
+                    // Do something with the stream, such as displaying it in a video element
+                })
+                .catch((error) => {
+                    console.error('Error accessing camera:', error);
+                });
+        } else {
+            console.error('getUserMedia is not supported in this browser');
+        }
     };
+    
 
     const handleViewInfo = () => {
-        // Redirect to the Excel sheet with extracted information
-        window.location.href = 'path_to_excel_sheet';
+        // Open the Google Sheets document in a new tab/window
+        window.open('https://docs.google.com/spreadsheets/d/1QTlcWgWp6hHzRo5gqG7acG3qT21unn1SxMc2b_ZNoCc/edit?usp=sharing', '_blank');
     };
+    
 
     return (
         <div className="max-w-md mx-auto mt-10 p-6 bg-rose-50 rounded-lg shadow-md font-extrabold flex flex-col gap-5">
