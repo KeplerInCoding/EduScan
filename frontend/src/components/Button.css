@@ -1,0 +1,7 @@
+button:hover .relative {  
+    text-shadow: 0 0 8px rgba(128, 0, 128);
+}
+
+.nav-link:hover {
+    text-shadow: 0 0 8px rgba(128, 0, 128, 0.7); /* Adjust the rgba for the shadow color and opacity */
+}

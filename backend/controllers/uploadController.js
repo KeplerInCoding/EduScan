@@ -1,16 +1,35 @@
-const path = require('path');
-const fs = require('fs');
+const axios = require('axios'); // Use axios to send HTTP requests
 
-// Dummy function to simulate saving a file locally
-exports.uploadFile = (req, res) => {
-  const file = req.file;
-  if (!file) {
-    return res.status(400).send({ message: 'No file uploaded' });
+exports.uploadFile = async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ message: 'No file uploaded' });
   }
 
-  // Move the file to the uploads directory
-  const uploadPath = path.join(__dirname, '../uploads', file.originalname);
-  fs.renameSync(file.path, uploadPath);
+  const { path, originalname } = req.file;
 
-  res.send({ message: 'File uploaded successfully', filePath: uploadPath });
+  try {
+    // Prepare the file for sending to the ML model
+    const fileData = {
+      file: {
+        value: require('fs').createReadStream(path),
+        options: {
+          filename: originalname,
+          contentType: req.file.mimetype,
+        },
+      },
+    };
+
+    // Send the file to the ML model's API endpoint
+    const response = await axios.post('ML_MODEL_API_ENDPOINT', fileData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+
+    // Return the result from the ML model to the frontend
+    res.status(200).json(response.data);
+  } catch (error) {
+    console.error('Error processing file with ML model:', error);
+    res.status(500).json({ message: 'Error processing file' });
+  }
 };

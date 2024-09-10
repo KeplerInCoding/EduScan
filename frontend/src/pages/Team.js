@@ -1,8 +1,7 @@
-import React from 'react';
+import React from 'react'
 import user from '../images/user.png'
 
-const AboutUs = () => {
-    // Sample data for team members
+const Team = () => {
     const teamMembers = [
         {
             name: 'Shreya Sharma',
@@ -82,6 +81,7 @@ const AboutUs = () => {
             </div>
         </div>
     );
-};
 
-export default AboutUs;
+}
+
+export default Team

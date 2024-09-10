@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-const GetStarted = () => {
-    return (
-        <div className="max-w-4xl mx-auto mt-10 p-6">
+const HowToUse = () => {
+  return (
+    <div className="max-w-4xl mx-auto mt-10 p-6">
             <h2 className="text-2xl font-bold mb-4">Getting Started</h2>
             <div className="mb-6">
                 <h3 className="text-lg font-semibold mb-2">How to Use This App:</h3>
@@ -30,7 +30,7 @@ const GetStarted = () => {
                 </p>
             </div>
         </div>
-    );
-};
+  )
+}
 
-export default GetStarted;
+export default HowToUse

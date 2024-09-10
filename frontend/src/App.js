@@ -2,10 +2,11 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home.js";
 import Footer from "./components/Footer.js";
-import Dashboard from "./pages/Dashboard.js";
 import ContactUs from "./pages/ContactUs.js";
-import AboutUs from "./pages/AboutUs.js";
-import GetStarted from "./pages/GetStarted.js";
+import About from "./pages/About.js";
+import GettingStarted from "./pages/GettingStarted.js";
+import HowToUse from "./pages/HowToUse.js";
+import Team from "./pages/Team.js";
 import {Route, Routes} from 'react-router-dom';
 
 function App() {
@@ -14,11 +15,12 @@ function App() {
       <Navbar/>
 
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/dashboard" element={<Dashboard/>}></Route>
-        <Route path="/contactus" element={<ContactUs/>}></Route>
-        <Route path="/aboutus" element={<AboutUs/>}></Route>
-        <Route path="/getstarted" element={<GetStarted/>}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/getting-started" element={<GettingStarted />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/how-to-use" element={<HowToUse />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
       <Footer></Footer>
     </div>
