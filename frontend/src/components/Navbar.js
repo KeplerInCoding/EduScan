@@ -5,7 +5,7 @@ import './Button.css'; // Make sure this is the correct path to your CSS file
 
 const Navbar = () => {
   return (
-    <div className='flex flex-wrap place-content-evenly gap-10 py-2 fixed top-0 left-0 w-full backdrop-blur-md shadow-lg z-50'>
+    <div className='flex flex-wrap place-content-evenly gap-10 py-2 fixed top-0 left-0 w-full backdrop-blur-md shadow-md z-50'>
       <Link to='/'>
         <div className='text-5xl font-extrabold text-purple-600'>EduScan</div>
       </Link>
