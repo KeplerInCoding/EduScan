@@ -13,16 +13,19 @@ function App() {
   return (
     <div class="main h-full overflow-x-hidden w-full bg-gradient-to-r from-purple-100 via-purple-50 to-purple-100 justify-center gap-4 flex-col min-h-screen">
       <Navbar/>
+      <div className="mt-20">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/getting-started" element={<GettingStarted />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/how-to-use" element={<HowToUse />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/contact" element={<ContactUs />} />
+        </Routes>
+      </div>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/getting-started" element={<GettingStarted />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/how-to-use" element={<HowToUse />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/contact" element={<ContactUs />} />
-      </Routes>
-      <Footer></Footer>
+      
+      <Footer/>
     </div>
   );
 }

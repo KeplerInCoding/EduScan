@@ -13,13 +13,27 @@ export const uploadImage = (file) => async (dispatch) => {
     const formData = new FormData();
     formData.append('file', file);
 
-    const { data } = await axios.post('/api/upload', formData, {
+    const response = await axios.post('http://localhost:5000/api/upload', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
-    dispatch({ type: UPLOAD_SUCCESS, payload: data });
+    // Dispatch success with response data
+    dispatch({
+      type: UPLOAD_SUCCESS,
+      payload: response.data, // Pass dummy response to the reducer
+    });
+
+    console.log('Returning dummy response in uploadActions:', response.data);
+    // Return the response to the caller
+    return { success: true, message: response.data.message, data: response.data.data };
+
   } catch (error) {
-    dispatch({ type: UPLOAD_FAILURE, payload: error.message });
-    console.error('Error uploading image:', error);
+    dispatch({
+      type: UPLOAD_FAILURE,
+      payload: error.response?.data?.message || 'Error uploading file',
+    });
+    console.error('Error processing file (dummy):', error);
+    // Return the error to the caller
+    return { success: false, message: error.response?.data?.message || 'Error uploading file' };
   }
 };

@@ -1,8 +1,16 @@
 import React from 'react'
+import imag1 from "../images/homePageBG7.jpeg";
+import imag2 from "../images/homePageBG5.jpeg";
+import imag3 from "../images/homePageBG.jpeg";
 
 const HowToUse = () => {
   return (
     <div className="max-w-4xl mx-auto mt-10 p-6">
+        <div className='mb-10 flex items-center justify-center gap-5'>
+                <div><img src={imag1} alt="AI"/></div>
+                <div><img src={imag2} alt="AI"/></div>
+                <div><img src={imag3} alt="AI"/></div>
+              </div>
             <h2 className="text-2xl font-bold mb-4">Getting Started</h2>
             <div className="mb-6">
                 <h3 className="text-lg font-semibold mb-2">How to Use This App:</h3>
