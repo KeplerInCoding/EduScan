@@ -38,6 +38,8 @@ const DocumentUpload = () => {
     }
   };
 
+  
+
   return (
     <div className="w-full">
       <FileUpload onFileSelect={handleFileSelect} />

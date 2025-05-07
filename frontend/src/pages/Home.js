@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../components/Button'
-import imag1 from "../images/homePageBG7.jpeg";
-import imag2 from "../images/homePageBG5.jpeg";
+import imag1 from "../images/homePageBG9.jpeg";
+import imag2 from "../images/homePageBG.jpeg";
 import imag3 from "../images/homePageBG1.jpeg";
 
 const HomePage = () => {
