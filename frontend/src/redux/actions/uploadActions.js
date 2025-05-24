@@ -23,7 +23,7 @@ export const uploadImage = (file) => async (dispatch) => {
       payload: response.data, // Pass dummy response to the reducer
     });
 
-    console.log('Returning dummy response in uploadActions:', response.data);
+    // console.log('Returning dummy response in uploadActions:', response.data);
     // Return the response to the caller
     return { success: true, message: response.data.message, data: response.data.data };
 
